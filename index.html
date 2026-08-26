@@ -1,0 +1,436 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+  
+  <title>01000100...</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta name="description" content="Librandi - Ciberdireito, Direito Digital, IA, Direito Espacial, Terra Nullius, Transumanismo, Escatologia Cristã e Filosofia da Tecnologia. Deus vult.">
+  <meta name="keywords" content="Ciberdireito, Cyberlaw, Cyberrecht, Droit cybernétique, Ius cyberneticum, Derecho Cibernético, Direito Digital, Digital Law, Derecho Digital, Inteligência Artificial, Artificial Intelligence, AI, Künstliche Intelligenz, Intelligentia artificialis, Inteligencia Artificial, Direito Espacial, Space Law, Weltraumrecht, Ius spatiale, Derecho Espacial, Terra Nullius, Transumanismo, Transhumanism, Transhumanismus, Escatologia Cristã, Christian Eschatology, Christliche Eschatologie, Eschatologia Christiana, Escatología Cristiana, Filosofia da Tecnologia, Philosophy of Technology, Philosophie der Technik, Cibersegurança, Cybersecurity, Cybersicherheit">
+  <meta name="author" content="Librandi">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Librandi Terminal">
+  <meta property="og:description" content="Ciberdireito, Inteligência Artificial, Direito Espacial, Terra Nullius, Transumanismo e Filosofia da Tecnologia.">
+  <meta property="og:url" content="https://www.librandi.adv.br/">
+  <meta property="og:site_name" content="Librandi Terminal">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Librandi | Terminal de Pesquisa em Ciberdireito e IA">
+  <meta name="twitter:description" content="Ciberdireito, IA, Direito Espacial, Terra Nullius e Teologia Existencial.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Librandi",
+    "url": "https://www.librandi.adv.br/",
+    "description": "Terminal de exploração e pesquisa em Ciberdireito, IA, Direito Espacial, Terra Nullius, Transumanismo, Filosofia da Tecnologia, Escatologia Cristã e Cibersegurança.",
+    "keywords": [
+      "Ciberdireito", "Cyberlaw", "Cyberrecht", "Ius cyberneticum", "Derecho Cibernético",
+      "Direito Digital", "Digital Law", "Digitalrecht", "Ius digitale", "Derecho Digital",
+      "Inteligência Artificial", "Artificial Intelligence", "AI", "Künstliche Intelligenz", "Intelligentia artificialis", "Inteligencia Artificial",
+      "IA e Direito", "AI and Law", "KI und Recht", "IA et Ius", "IA y Derecho",
+      "Ética da IA", "AI Ethics", "KI-Ethik", "Ethica IA", "Ética de la IA",
+      "Direito Espacial", "Space Law", "Weltraumrecht", "Ius spatiale", "Derecho Espacial",
+      "Colonização espacial", "Space Colonization", "Weltraumkolonisierung", "Colonizatio spatialis", "Colonización espacial",
+      "Terra Nullius", "No Man's Land", "Niemandsland", "Tierra de nadie",
+      "Futuro da humanidade", "Future of Humanity", "Zukunft der Menschheit", "Futurum humanitatis", "Futuro de la humanidad",
+      "Transumanismo", "Transhumanism", "Transhumanismus", "Transhumanismo",
+      "Escatologia cristã", "Christian Eschatology", "Christliche Eschatologie", "Eschatologia christiana", "Escatología cristiana",
+      "Filosofia da tecnologia", "Philosophy of Technology", "Philosophie der Technik", "Philosophia technologiae", "Filosofía de la tecnología",
+      "Vida após a morte", "Life After Death", "Leben nach dem Tod", "Vita post mortem", "Vida después de la muerte",
+      "Cristianismo e tecnologia", "Christianity and Technology", "Christentum und Technik", "Christianismus et technologia", "Cristianismo y tecnología",
+      "Segurança da informação", "Information Security", "Informationssicherheit", "Securitas informationis", "Seguridad de la información",
+      "Criptomoedas", "Cryptocurrency", "Kryptowährung", "Cryptofides", "Criptomonedas",
+      "Bitcoin", "Ethereum", "Privacidade", "Privacy", "Datenschutz", "Privitas", "Privacidad",
+      "Cibersegurança", "Cybersecurity", "Cybersicherheit", "Securitas cybernetica", "Ciberseguridad"
+    ],
+    "about": {
+      "@type": "Thing",
+      "name": "Ciberdireito, Inteligência Artificial, Direito Espacial e Filosofia da Tecnologia"
+    }
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000000;
+      color: #00FF00;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Faixas Verdes (Top e Bottom) */
+    .green-bar {
+      width: 100%;
+      height: 12px;
+      background-color: #00CC00;
+      box-shadow: 0 0 10px #00CC00;
+      flex-shrink: 0;
+    }
+
+    /* Container Interno da Aplicação */
+    .app-container {
+      display: flex;
+      flex: 1;
+      padding: 25px 40px;
+      gap: 40px;
+      height: calc(1080px - 24px);
+      overflow: hidden;
+    }
+
+    /* Coluna dos binários na esquerda */
+    .binary-stream {
+      color: #00CC00;
+      font-size: 13px;
+      line-height: 1.4;
+      user-select: none;
+      white-space: pre;
+      opacity: 0.85;
+      width: 320px;
+      word-break: break-all;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      max-width: 1450px;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #00FF00;
+      text-transform: uppercase;
+      border-bottom: 2px solid #00CC00;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Manifesto institucional */
+    .about-section {
+      background-color: #030d03;
+      border: 1px solid #005500;
+      padding: 15px;
+      margin-bottom: 20px;
+      color: #a3ffa3;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .about-section h2 {
+      font-size: 14px;
+      color: #00FF00;
+      margin-top: 0;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Seção de Seleção de Carteiras */
+    .wallet-selector-container {
+      background: #030d03;
+      border: 1px solid #00CC00;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .select-label {
+      color: #00FF00;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Menu Select com Rolagem */
+    .crypto-select {
+      background-color: #000000;
+      color: #00FF00;
+      border: 1px solid #00CC00;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      padding: 8px;
+      width: 100%;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .crypto-select option {
+      background-color: #051105;
+      color: #00FF00;
+      padding: 6px;
+    }
+
+    /* Exibição do Endereço e Botão */
+    .address-display-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #051105;
+      padding: 10px;
+      border-left: 3px solid #00CC00;
+    }
+
+    .wallet-address {
+      color: #E0E0E0;
+      font-size: 14px;
+      word-break: break-all;
+      flex: 1;
+    }
+
+    .copy-btn {
+      background-color: #0a220a;
+      color: #00FF00;
+      border: 1px solid #00CC00;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .copy-btn:hover {
+      background-color: #00CC00;
+      color: #000000;
+    }
+
+    .copy-btn.copied {
+      background-color: #00FF00;
+      color: #000000;
+    }
+
+    /* Wrapper Flexbox para colocar QR Code e Dados do Banco lado a lado */
+    .qr-and-bank-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    /* Exibição do Código QR */
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      background: #000000;
+      border: 1px dashed #005500;
+      width: fit-content;
+      flex-shrink: 0;
+    }
+
+    .qr-container img {
+      width: 160px;
+      height: 160px;
+      border: 4px solid #FFFFFF;
+    }
+
+    .qr-label {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #00CC00;
+    }
+
+    /* Bloco dos Dados Bancários em Dólar (Nomad Account) */
+    .bank-details-box {
+      flex: 1;
+      background: #020a02;
+      border: 1px solid #005500;
+      border-left: 3px solid #00FF00;
+      padding: 15px 20px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #c0ffc0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bank-title {
+      color: #00FF00;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .bank-item {
+      margin-bottom: 3px;
+    }
+
+    .bank-item span.label {
+      color: #00CC00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Faixa Verde Superior -->
+  <div class="green-bar"></div>
+
+  <div class="app-container">
+    <!-- Coluna da esquerda: Binários -->
+    <div class="binary-stream" id="binaryColumn"></div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+      
+      <section class="about-section">
+        <h2>LIBRANDI.ADV.BR — PESQUISA E CIBERDIREITO</h2>
+        <p>
+          Plataforma acadêmica e jurídica dedicada ao estudo avançado de <strong>Ciberdireito (Cyberlaw)</strong>, regulação de <strong>Inteligência Artificial (IA)</strong>, <strong>Direito Espacial</strong>, regimes jurídicos de <em>Terra Nullius</em>, <strong>Transumanismo</strong> e <strong>Escatologia Cristã</strong> na era digital.
+        </p>
+      </section>
+
+      <h1>DO WHAT YOUR CONSCIENCE TELLS YOU TO (ANY AMOUNT...NO AMOUNT IS ALSO AN AMOUNT...IN ANY CASE, THANK YOU!)</h1>
+
+      <!-- Seção Selecionável de Carteiras -->
+      <div class="wallet-selector-container">
+        <label for="walletSelect" class="select-label">> SELECT ASSET / NETWORK:</label>
+        
+        <select id="walletSelect" class="crypto-select" size="4" onchange="updateWallet()">
+          <option value="btc" selected>BTC (BTC Network)</option>
+          <option value="eth">ETH (ERC20 Network)</option>
+          <option value="usdc">USDC (ERC20 Network)</option>
+          <option value="usdt">USDT (ERC20 Network)</option>
+          <option value="aeur">AEUR (ERC20 Network)</option>
+          <option value="bnb">BNB (BNB Smart Chain - BEP20 Network)</option>
+          <option value="sol">SOL (SOL Network)</option>
+          <option value="doge">DOGE (DOGE Network)</option>
+          <option value="xmr">MONERO (XMR Network)</option>
+        </select>
+
+        <div class="address-display-box">
+          <span class="wallet-address" id="selectedAddress">1H4aW5Pwj6G6yB7f8Dvkm7PRrFCoeGMPpX</span>
+          <button class="copy-btn" id="copyBtn" onclick="copySelectedAddress()">[ COPY ]</button>
+        </div>
+
+        <!-- QR Code e Dados Bancários Lado a Lado -->
+        <div class="qr-and-bank-wrapper">
+          <div class="qr-container">
+            <img id="qrCodeImg" src="" alt="QR Code Endereço Crypto">
+            <span class="qr-label">[ SCAN QR CODE ]</span>
+          </div>
+
+          <div class="bank-details-box">
+            <div class="bank-title">If you want to identify yourself, just make a banking deposit:</div>
+            <div style="margin-bottom: 6px; font-weight: bold; color: #00FF00;">In Dollar:</div>
+            <div class="bank-item"><span class="label">Nomad Account:</span> Type: Bank account</div>
+            <div class="bank-item"><span class="label">ACH Routing Number:</span> 026073150</div>
+            <div class="bank-item"><span class="label">WIRE Routing Number:</span> 026073008</div>
+            <div class="bank-item"><span class="label">Account type:</span> Checking account</div>
+            <div class="bank-item"><span class="label">SWIFT Code:</span> CMFGUS33</div>
+            <div class="bank-item"><span class="label">Bank:</span> Community Federal Savings Bank</div>
+            <div class="bank-item"><span class="label">Bank address:</span> 8916 Jamaica Ave, Woodhaven, NY 11421</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Faixa Verde Inferior -->
+  <div class="green-bar"></div>
+
+  <script>
+    // Dicionário com carteiras
+    const wallets = {
+      btc: "1H4aW5Pwj6G6yB7f8Dvkm7PRrFCoeGMPpX",
+      eth: "0x28f5533c3f3d35554335f402bbddff395ffe9388",
+      usdc: "0x28f5533c3f3d35554335f402bbddff395ffe9388",
+      usdt: "0x28f5533c3f3d35554335f402bbddff395ffe9388",
+      aeur: "0x28f5533c3f3d35554335f402bbddff395ffe9388",
+      bnb: "0x28f5533c3f3d35554335f402bbddff395ffe9388",
+      sol: "GACDcw2q6QWg6qvLRdEcpnPQ6r2YnadxaAzCNR1y68nb",
+      doge: "DJXkBY3ue3EeW3gG4cmTpZfRtPW8eF71uU",
+      xmr: "46Xiy65scEPTnQQYSr4dEqL9m1h3gThSDeTXXFgSxQbs7APYPrBtTwqi3QornnRPPtUKp7YtWXWSjE9sZc65FHmYRJu1oei"
+    };
+
+    // Atualizar carteira e gerar QR Code dinâmico
+    function updateWallet() {
+      const select = document.getElementById('walletSelect');
+      const address = wallets[select.value];
+      document.getElementById('selectedAddress').innerText = address;
+      
+      const qrUrl = `https://quickchart.io/qr?text=${encodeURIComponent(address)}&size=160&margin=1`;
+      document.getElementById('qrCodeImg').src = qrUrl;
+    }
+
+    // Copiar endereço selecionado
+    function copySelectedAddress() {
+      const address = document.getElementById('selectedAddress').innerText;
+      const btn = document.getElementById('copyBtn');
+      navigator.clipboard.writeText(address).then(() => {
+        btn.innerText = '[ COPIED! ]';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerText = '[ COPY ]';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Conversão para binário
+    const textToBinary = (str) => {
+      const encoder = new TextEncoder();
+      const bytes = encoder.encode(str);
+      return Array.from(bytes).map(b => b.toString(2).padStart(8, '0'));
+    };
+
+    // Preencher coluna lateral de binários
+    const phrase = "Direito Ciberdireito IA AI Exploração Espacial Colonização de Terra Nullius ";
+    const binaryArray = textToBinary(phrase);
+    
+    let lines = [];
+    for (let i = 0; i < binaryArray.length; i += 4) {
+      lines.push(binaryArray.slice(i, i + 4).join(' '));
+    }
+    
+    const repeatedContent = Array(6).fill(lines.join('\n')).join('\n');
+    document.getElementById('binaryColumn').innerText = repeatedContent;
+
+    // Animação no Título da Aba
+    const titlePhrase = "Deus vult - Welcome to the next level of existence   ";
+    const titleBinary = textToBinary(titlePhrase).join(' ');
+    
+    let position = 0;
+    setInterval(() => {
+      let currentText = titleBinary.substring(position) + titleBinary.substring(0, position);
+      document.title = currentText.substring(0, 40);
+      
+      position++;
+      if (position >= titleBinary.length) position = 0;
+    }, 200);
+
+    // Inicialização do QR Code na carga inicial
+    window.onload = updateWallet;
+  </script>
+
+</body>
+</html>
