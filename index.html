@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -149,7 +149,7 @@
       text-transform: uppercase;
     }
 
-    /* Seção de Seleção de Carteiras */
+    /* Seção principal de ativos/redes */
     .wallet-selector-container {
       background: #030d03;
       border: 1px solid #00CC00;
@@ -165,15 +165,33 @@
       font-weight: bold;
     }
 
-    /* Menu Select com Rolagem */
+    /* ESTRUTURA DE DADOS DAS 2 COLUNAS (50% / 50%) */
+    .asset-table {
+      width: 100%;
+      border: 1px solid #005500;
+      background-color: #000000;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 250px;
+    }
+
+    /* Coluna 1: Lista de ativos */
+    .cell-selector {
+      border-right: 1px solid #005500;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+
     .crypto-select {
       background-color: #000000;
       color: #00FF00;
       border: 1px solid #00CC00;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 14px;
+      font-size: 13px;
       padding: 8px;
       width: 100%;
+      height: 220px;
       outline: none;
       cursor: pointer;
     }
@@ -181,22 +199,62 @@
     .crypto-select option {
       background-color: #051105;
       color: #00FF00;
-      padding: 6px;
+      padding: 8px;
+      margin-bottom: 2px;
+    }
+
+    .crypto-select option:hover, .crypto-select option:checked {
+      background-color: #00CC00;
+      color: #000000;
+    }
+
+    /* Coluna 2: QR Code acima/esquerda e Endereço abaixo */
+    .cell-details {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .qr-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background: #000000;
+      border: 1px dashed #005500;
+    }
+
+    .qr-container img {
+      width: 140px;
+      height: 140px;
+      border: 4px solid #FFFFFF;
+    }
+
+    .qr-label {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #00CC00;
     }
 
     /* Exibição do Endereço e Botão */
     .address-display-box {
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 10px;
       background: #051105;
-      padding: 10px;
+      padding: 8px 12px;
+      border: 1px solid #005500;
       border-left: 3px solid #00CC00;
+      width: 100%;
     }
 
     .wallet-address {
       color: #E0E0E0;
-      font-size: 14px;
+      font-size: 13px;
       word-break: break-all;
       flex: 1;
     }
@@ -211,6 +269,7 @@
       padding: 6px 12px;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
+      flex-shrink: 0;
     }
 
     .copy-btn:hover {
@@ -223,68 +282,101 @@
       color: #000000;
     }
 
-    /* Wrapper Flexbox para colocar QR Code e Dados do Banco lado a lado */
-    .qr-and-bank-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      gap: 25px;
-      margin-top: 10px;
-    }
-
-    /* Exibição do Código QR */
-    .qr-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      background: #000000;
-      border: 1px dashed #005500;
-      width: fit-content;
-      flex-shrink: 0;
-    }
-
-    .qr-container img {
-      width: 160px;
-      height: 160px;
-      border: 4px solid #FFFFFF;
-    }
-
-    .qr-label {
-      margin-top: 8px;
-      font-size: 11px;
-      color: #00CC00;
-    }
-
-    /* Bloco dos Dados Bancários em Dólar (Nomad Account) */
-    .bank-details-box {
-      flex: 1;
+    /* CONTAINER DOS DADOS BANCÁRIOS DE 3 COLUNAS (33.3% / 33.3% / 33.3%) */
+    .bank-details-wrapper {
       background: #020a02;
       border: 1px solid #005500;
       border-left: 3px solid #00FF00;
       padding: 15px 20px;
-      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .bank-header-title {
+      color: #00FF00;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .bank-columns-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+    }
+
+    .bank-col {
+      background-color: #000000;
+      border: 1px solid #003300;
+      padding: 12px;
+      font-size: 12px;
       line-height: 1.5;
       color: #c0ffc0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
     }
 
-    .bank-title {
-      color: #00FF00;
+    .bank-col-title {
       font-weight: bold;
-      font-size: 14px;
+      color: #00FF00;
+      border-bottom: 1px solid #005500;
+      padding-bottom: 4px;
       margin-bottom: 8px;
     }
 
     .bank-item {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      word-break: break-word;
     }
 
     .bank-item span.label {
       color: #00CC00;
+    }
+
+    /* Layout da coluna Pix com alinhamento do QR Code à direita */
+    .pix-top-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .pix-info-text {
+      flex: 1;
+    }
+
+    .pix-qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px;
+      background: #000000;
+      border: 1px dashed #005500;
+      flex-shrink: 0;
+    }
+
+    .pix-qr-container img {
+      width: 90px;
+      height: 90px;
+      border: 2px solid #FFFFFF;
+    }
+
+    .pix-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 10px;
+      background: #051105;
+      padding: 6px 8px;
+      border: 1px solid #005500;
+      width: 100%;
+    }
+
+    .pix-key {
+      font-size: 11px;
+      color: #ffffff;
+      word-break: break-all;
     }
   </style>
 </head>
@@ -311,42 +403,106 @@
 
       <!-- Seção Selecionável de Carteiras -->
       <div class="wallet-selector-container">
-        <label for="walletSelect" class="select-label">> SELECT ASSET / NETWORK:</label>
+        <div class="select-label">> SELECT ASSET / NETWORK:</div>
         
-        <select id="walletSelect" class="crypto-select" size="4" onchange="updateWallet()">
-          <option value="btc" selected>BTC (BTC Network)</option>
-          <option value="eth">ETH (ERC20 Network)</option>
-          <option value="usdc">USDC (ERC20 Network)</option>
-          <option value="usdt">USDT (ERC20 Network)</option>
-          <option value="aeur">AEUR (ERC20 Network)</option>
-          <option value="bnb">BNB (BNB Smart Chain - BEP20 Network)</option>
-          <option value="sol">SOL (SOL Network)</option>
-          <option value="doge">DOGE (DOGE Network)</option>
-          <option value="xmr">MONERO (XMR Network)</option>
-        </select>
-
-        <div class="address-display-box">
-          <span class="wallet-address" id="selectedAddress">1H4aW5Pwj6G6yB7f8Dvkm7PRrFCoeGMPpX</span>
-          <button class="copy-btn" id="copyBtn" onclick="copySelectedAddress()">[ COPY ]</button>
-        </div>
-
-        <!-- QR Code e Dados Bancários Lado a Lado -->
-        <div class="qr-and-bank-wrapper">
-          <div class="qr-container">
-            <img id="qrCodeImg" src="" alt="QR Code Endereço Crypto">
-            <span class="qr-label">[ SCAN QR CODE ]</span>
+        <!-- Grid de Duas Colunas com Largura Idêntica (50% / 50%) -->
+        <div class="asset-table">
+          <!-- Coluna 1: Opções de seleção de Asset/Network -->
+          <div class="cell-selector">
+            <select id="walletSelect" class="crypto-select" size="9" onchange="updateWallet()">
+              <option value="btc" selected>BTC (BTC Network)</option>
+              <option value="eth">ETH (ERC20 Network)</option>
+              <option value="usdc">USDC (ERC20 Network)</option>
+              <option value="usdt">USDT (ERC20 Network)</option>
+              <option value="aeur">AEUR (ERC20 Network)</option>
+              <option value="bnb">BNB (BNB Smart Chain - BEP20 Network)</option>
+              <option value="sol">SOL (SOL Network)</option>
+              <option value="doge">DOGE (DOGE Network)</option>
+              <option value="xmr">MONERO (XMR Network)</option>
+            </select>
           </div>
 
-          <div class="bank-details-box">
-            <div class="bank-title">If you want to identify yourself, just make a banking deposit:</div>
-            <div style="margin-bottom: 6px; font-weight: bold; color: #00FF00;">In Dollar:</div>
-            <div class="bank-item"><span class="label">Nomad Account:</span> Type: Bank account</div>
-            <div class="bank-item"><span class="label">ACH Routing Number:</span> 026073150</div>
-            <div class="bank-item"><span class="label">WIRE Routing Number:</span> 026073008</div>
-            <div class="bank-item"><span class="label">Account type:</span> Checking account</div>
-            <div class="bank-item"><span class="label">SWIFT Code:</span> CMFGUS33</div>
-            <div class="bank-item"><span class="label">Bank:</span> Community Federal Savings Bank</div>
-            <div class="bank-item"><span class="label">Bank address:</span> 8916 Jamaica Ave, Woodhaven, NY 11421</div>
+          <!-- Coluna 2: QR Code acima/esquerda e Endereço abaixo -->
+          <div class="cell-details">
+            <div class="qr-container">
+              <img id="qrCodeImg" src="" alt="QR Code Endereço Crypto">
+              <span class="qr-label">[ SCAN QR CODE ]</span>
+            </div>
+
+            <div class="address-display-box">
+              <span class="wallet-address" id="selectedAddress">1H4aW5Pwj6G6yB7f8Dvkm7PRrFCoeGMPpX</span>
+              <button class="copy-btn" id="copyBtn" onclick="copySelectedAddress()">[ COPY ]</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dados Bancários Divididos em 3 Colunas de Larguras Iguais -->
+        <div class="bank-details-wrapper">
+          <div class="bank-header-title">If you want to identify yourself, just make a banking deposit:</div>
+          
+          <div class="bank-columns-container">
+            
+            <!-- Coluna 1: Dólar (Nomad Account) -->
+            <div class="bank-col">
+              <div>
+                <div class="bank-col-title">In Dollar:</div>
+                <div class="bank-item"><span class="label">Nomad Account:</span> Type: Bank account</div>
+                <div class="bank-item"><span class="label">ACH Routing Number:</span> 026073150</div>
+                <div class="bank-item"><span class="label">WIRE Routing Number:</span> 026073008</div>
+                <div class="bank-item"><span class="label">Account type:</span> Checking account</div>
+                <div class="bank-item"><span class="label">SWIFT Code:</span> CMFGUS33</div>
+                <div class="bank-item"><span class="label">Bank:</span> Community Federal Savings Bank</div>
+                <div class="bank-item"><span class="label">Bank address:</span> 8916 Jamaica Ave, Woodhaven, NY 11421</div>
+              </div>
+            </div>
+
+            <!-- Coluna 2: Euro (Bridge Building S.A.) -->
+            <div class="bank-col">
+              <div>
+                <div class="bank-col-title">Para depósitos em Euro:</div>
+                <div class="bank-item"><span class="label">Nome do beneficiário:</span> Bridge Building S.A.</div>
+                <div class="bank-item"><span class="label">País:</span> Luxemburgo</div>
+                <div class="bank-item"><span class="label">IBAN:</span> LU384080000048407973</div>
+                <div class="bank-item"><span class="label">Tipo de conta:</span> Empresas</div>
+                <div class="bank-item"><span class="label">Endereço da conta:</span> Bartycka 22B/21A, Warsaw, 00-716, Polônia</div>
+                <div class="bank-item"><span class="label">Banco:</span> Banking Circle S.A.</div>
+                <div class="bank-item"><span class="label">Endereço do banco:</span> 2 Boulevard de la Foire, Luxembourg City, L-1528, Luxemburgo</div>
+              </div>
+            </div>
+
+            <!-- Coluna 3: Real (ARQ IP LTDA) + QR Code Pix à Direita -->
+            <div class="bank-col">
+              <div>
+                <div class="bank-col-title">Para depósitos em Real:</div>
+                
+                <div class="pix-top-wrapper">
+                  <!-- Texto com dados à esquerda -->
+                  <div class="pix-info-text">
+                    <div class="bank-item"><span class="label">Razão Social:</span> ARQ IP LTDA</div>
+                    <div class="bank-item"><span class="label">Número do banco:</span> 27126513</div>
+                    <div class="bank-item"><span class="label">Número da filial:</span> 0001</div>
+                    <div class="bank-item"><span class="label">Número da conta:</span> 5530004769657343567</div>
+                    <div class="bank-item"><span class="label">Tipo de conta:</span> Corrente</div>
+                  </div>
+
+                  <!-- QR Code do Pix à direita -->
+                  <div class="pix-qr-container">
+                    <img id="pixQrImg" src="" alt="QR Code Pix">
+                    <span class="qr-label" style="font-size: 9px; margin-top: 4px;">[ PIX ]</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chave Pix e botão de copiar na base -->
+              <div>
+                <div class="bank-item" style="margin-top: 6px;"><span class="label">Chave Pix:</span></div>
+                <div class="pix-box">
+                  <span class="pix-key" id="pixKeyText">611e05d8-c200-47d4-819e-6143de6b0616</span>
+                  <button class="copy-btn" id="pixCopyBtn" onclick="copyPixKey()">[ COPY ]</button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -382,11 +538,32 @@
       document.getElementById('qrCodeImg').src = qrUrl;
     }
 
-    // Copiar endereço selecionado
+    // Gerar QR Code para a Chave Pix
+    function initPixQrCode() {
+      const pixKey = document.getElementById('pixKeyText').innerText;
+      const pixQrUrl = `https://quickchart.io/qr?text=${encodeURIComponent(pixKey)}&size=100&margin=1`;
+      document.getElementById('pixQrImg').src = pixQrUrl;
+    }
+
+    // Copiar endereço selecionado de crypto
     function copySelectedAddress() {
       const address = document.getElementById('selectedAddress').innerText;
       const btn = document.getElementById('copyBtn');
       navigator.clipboard.writeText(address).then(() => {
+        btn.innerText = '[ COPIED! ]';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerText = '[ COPY ]';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Copiar Chave PIX
+    function copyPixKey() {
+      const pixKey = document.getElementById('pixKeyText').innerText;
+      const btn = document.getElementById('pixCopyBtn');
+      navigator.clipboard.writeText(pixKey).then(() => {
         btn.innerText = '[ COPIED! ]';
         btn.classList.add('copied');
         setTimeout(() => {
@@ -428,8 +605,11 @@
       if (position >= titleBinary.length) position = 0;
     }, 200);
 
-    // Inicialização do QR Code na carga inicial
-    window.onload = updateWallet;
+    // Inicialização dos QR Codes na carga inicial
+    window.onload = () => {
+      updateWallet();
+      initPixQrCode();
+    };
   </script>
 
 </body>
